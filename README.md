@@ -1,6 +1,5 @@
-# Project Title
-S0: AI-Powered Component Generator
-
+#S0: AI-Powered Component Generator
+<img src="https://raw.githubusercontent.com/sarvagyakrcs/s0-client/refs/heads/main/demo/Create%20Next%20App.jpeg" />
 # Short Description
 S0 is an intelligent UI component generator that combines semantic search with advanced language models to create high-quality, accessible React and HTML components. It uses dual embedding technology (BERT + CodeBERT) to find similar components and leverages them as context for generating new ones.
 
