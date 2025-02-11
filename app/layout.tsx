@@ -1,7 +1,11 @@
+import QueryClientProvider from "@/components/providers/query-client";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Lato, Orbitron } from "next/font/google";
+import { ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Lato({ subsets: ["latin"] ,weight: ["400", "700"] });
+
 
 export const metadata = {
   title: "Create Next App",
@@ -11,11 +15,16 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <QueryClientProvider>
+          {children}
+          <Toaster position="top-right" />
+        </QueryClientProvider>
+      </body>
     </html>
   );
 }

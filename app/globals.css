@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Brand Colors */
+    --color-primary: 0 255 255; /* Neon Cyan */
+    --color-primary-light: 102 252 241; /* Lighter Cyan */
+    --color-primary-dark: 0 180 180; /* Darker Cyan */
+
+    /* UI Colors */
+    --color-background: 10 10 15; /* Dark Sci-Fi Black */
+    --color-surface: 20 20 30; /* Slightly Lighter Black */
+    --color-border: 45 45 60; /* Cool Gray Border */
+    
+    /* Text Colors */
+    --color-text-primary: 230 230 255; /* Soft White-Blue */
+    --color-text-secondary: 160 160 190; /* Muted Blue-Gray */
+    --color-text-inverse: 0 255 255; /* Neon Cyan */
+
+    /* Status Colors */
+    --color-success: 0 255 127; /* Neon Green */
+    --color-error: 255 0 85; /* Cyberpunk Red */
+    --color-error-light: 255 102 133; /* Softer Red */
+    
+    /* Message Colors */
+    --color-user-bubble: 0 140 255; /* Electric Blue */
+    --color-assistant-bubble: 45 45 60; /* Dark Grayish Surface */
+    
+    /* Shadows & Effects */
+    --shadow-sm: 0 1px 4px rgb(0 255 255 / 0.3);
+    --shadow-md: 0 4px 10px rgb(0 255 255 / 0.5);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  .chat-gradient {
+    background: radial-gradient(circle, rgb(var(--color-background)) 0%, rgb(var(--color-surface)) 100%);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 5px rgb(var(--color-primary)), 0 0 10px rgb(var(--color-primary-light));
+  }
+
+  .neon-border {
+    border: 2px solid rgb(var(--color-primary));
+    box-shadow: 0 0 10px rgb(var(--color-primary-light) / 0.8);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
