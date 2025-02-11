@@ -1,0 +1,23 @@
+{
+  "name": "tailwind-ui",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "html-jsx": "bun run utils/html-jsx-engine.tsx",
+    "scrape": "bun run utils/scrape.ts",
+    "dev": "bun run index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "groq-sdk": "^0.15.0",
+    "puppeteer": "^24.2.0"
+  }
+}
